@@ -1,25 +1,28 @@
---------------------------------------------------------
---  File created - Saturday-December-03-2016   
---------------------------------------------------------
---------------------------------------------------------
---  DDL for Table YEAR
---------------------------------------------------------
-
-  CREATE TABLE "ABHINAV21793"."YEAR" 
-   (	"YEAR" NUMBER(6,0), 
-	"HOST_COUNTRY" VARCHAR2(128 BYTE), 
-	"HOST_CITY" VARCHAR2(128 BYTE)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  Constraints for Table YEAR
---------------------------------------------------------
-
-  ALTER TABLE "ABHINAV21793"."YEAR" MODIFY ("HOST_CITY" NOT NULL ENABLE);
-  ALTER TABLE "ABHINAV21793"."YEAR" MODIFY ("HOST_COUNTRY" NOT NULL ENABLE);
-  ALTER TABLE "ABHINAV21793"."YEAR" MODIFY ("YEAR" NOT NULL ENABLE);
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1896,'Greece','Athens');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1900,'France','Paris');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1904,'United States','St. Louis');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1908,'United Kingdom','London');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1912,'Sweden','Stockholm');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1920,'Belgium','Antwerp');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1924,'France','Paris');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1928,'Netherlands','Amsterdam');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1932,'United States','Los Angeles');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1936,'Germany','Berlin');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1948,'United Kingdom','London');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1952,'Finland','Helsinki');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1956,'Australia','Melbourne');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1960,'Italy','Rome');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1964,'Japan','Tokyo');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1968,'Mexico','Mexico City');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1972,'Germany','Munich');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1976,'Canada','Montreal');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1980,'USSR','Moscow');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1984,'United States','Los Angeles');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1988,'South Korea','Seoul');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1992,'Spain','Barcelona');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (1996,'United States','Atlanta');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (2000,'Australia','Sydney');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (2004,'Greece','Athens');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (2008,'China','Beijing');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (2012,'United Kingdom','London');
+Insert into olympics.YEAR (YEAR,HOST_COUNTRY,HOST_CITY) values (2016,'Brazil','Rio De Janeiro');
