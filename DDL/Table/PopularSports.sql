@@ -1,0 +1,14 @@
+Insert into olympics.POPULARSPORTS (SPORT) values ('Golf');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Football');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Swimming');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Boxing');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Hockey');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Athletics');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Badminton');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Tennis');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Baseball');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Hockey');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Basketball');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Shooting');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Rugby');
+Insert into olympics.POPULARSPORTS (SPORT) values ('Archery');
