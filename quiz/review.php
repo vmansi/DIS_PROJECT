@@ -10,6 +10,15 @@ if($submit=='Finish')
 	header("Location: index.php");
 	exit;
 }
+if($submit=='Bing Search')
+{
+	$rs=mysql_query("select * from mst_useranswer where sess_id='" . session_id() ."'",$cn) or die(mysql_error());
+	mysql_data_seek($rs,$_SESSION[qn]);
+	$row= mysql_fetch_row($rs);	
+	$pos = $row[7]+2;	
+	$link = "<script>window.open('https://www.bing.com/search?q=olympics+$row[$pos]')</script>";
+	echo $link;
+}
 ?>
 <!DOCTYPE >
 <html>
@@ -45,10 +54,13 @@ echo "<tr><td class=".($row[7]==1?'tans':'style8').">$row[3]";
 echo "<tr><td class=".($row[7]==2?'tans':'style8').">$row[4]";
 echo "<tr><td class=".($row[7]==3?'tans':'style8').">$row[5]";
 echo "<tr><td class=".($row[7]==4?'tans':'style8').">$row[6]";
-if($_SESSION[qn]<mysql_num_rows($rs)-1)
-echo "<tr><td><input type=submit name=submit value='Next Question'></form>";
-else
+if($_SESSION[qn]<mysql_num_rows($rs)-1){
+	echo "<tr><td><input type=submit name=submit value='Next Question'></form>";
+	echo "<tr><td><input type=submit name=submit value='Bing Search'></form>";
+}
+else{
 echo "<tr><td><input type=submit name=submit value='Finish'></form>";
-
+echo "<tr><td><input type=submit name=submit value='Bing Search'></form>";
+}
 echo "</table></table>";
 ?>
