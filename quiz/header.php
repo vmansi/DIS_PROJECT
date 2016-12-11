@@ -53,7 +53,7 @@ scale= showall>
 	 else
 	 {
 	 	echo "&nbsp;";
-	 }
+	 }	 
 	?>
 	</td>
 	

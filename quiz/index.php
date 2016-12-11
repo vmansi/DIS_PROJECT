@@ -13,7 +13,10 @@ session_start();
 include("header.php");
 include("database.php");
 extract($_POST);
-
+extract($_SESSION);
+if (isset($_SESSION[qn])){
+	unset($_SESSION[qn]);
+}
 if(isset($submit))
 {
 	$rs=mysql_query("select * from mst_user where login='$loginid' and pass='$pass'");
