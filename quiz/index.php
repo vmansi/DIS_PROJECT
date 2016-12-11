@@ -17,6 +17,9 @@ extract($_SESSION);
 if (isset($_SESSION[qn])){
 	unset($_SESSION[qn]);
 }
+if (isset($_SESSION[cnt])){
+	unset($_SESSION[cnt]);
+}
 if(isset($submit))
 {
 	$rs=mysql_query("select * from mst_user where login='$loginid' and pass='$pass'");
