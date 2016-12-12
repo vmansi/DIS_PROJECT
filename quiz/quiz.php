@@ -117,7 +117,8 @@ if ($table == 9){ // MainQuizQuestion
 
 if ($table == 10){ // Olympics History
 	$collection=$db->OlympicHistory;
-	$num_r = $collection->count();	
+	$num_r = $collection->count();
+		
 }
 
 if ($table == 11){ // Paralympics
@@ -135,6 +136,16 @@ if ($table == 13){ // Image Questions
 	$num_r = $collection->count();	
 }
 
+$randrow = mt_rand(0,$num_r-1);
+$query = mysql_query("select * from track_questions",$cn) or die(mysql_error());
+$num = mysql_num_rows($query);
+mysql_query("insert into track_questions(table_num, row_num) values($table,$randrow)",$cn); 
+
+while (mysql_num_rows($query)==$num){
+	$randrow = mt_rand(0,$num_r-1);		
+	mysql_query("insert into track_questions(table_num, row_num) values($table,$randrow)");
+	$query = mysql_query("select * from track_questions",$cn) or die(mysql_error());
+}
 
 if(!isset($_SESSION[qn]))
 {		
@@ -142,9 +153,14 @@ if(!isset($_SESSION[qn]))
 	$_SESSION[trueans]=0;
 	
 	mysql_query("delete from mst_useranswer") or die(mysql_error());
-	mysql_query("delete from mst_question") or die(mysql_error());	
+	mysql_query("delete from mst_question") or die(mysql_error());
+	mysql_query("delete from track_questions") or die(mysql_error());
+	mysql_query("insert into track_questions(table_num, row_num) values(-1,-1)");
+	
 	$_SESSION[cnt] = 0;	
 }
+
+
 
 	
 if($submit=='Next Question' && isset($ans))
@@ -152,6 +168,7 @@ if($submit=='Next Question' && isset($ans))
 		$rs_new = mysql_query("select * from mst_question where que_id=$cnt-1",$cn) or die(mysql_error());
 		mysql_data_seek($rs_new,0);
 		$row = mysql_fetch_row($rs_new);
+		//echo $_SESSION[qn];
 		mysql_query("insert into mst_useranswer(sess_id, test_id, que_des, ans1,ans2,ans3,ans4,true_ans,your_ans,url,notes,tags) values ('".session_id()."', $tid,'$row[2]','$row[3]','$row[4]','$row[5]', '$row[6]','$row[7]','$ans','$row[8]','$row[9]','$row[10]')") or die(mysql_error());
 		if($ans==$row[7])
 		{
@@ -204,9 +221,7 @@ echo "Please <a href=index.php> Start Again</a>";
 exit;
 }
 $_SESSION[cnt] = $_SESSION[cnt] +1;
-$array = array();
 
-$randrow = mt_rand(0,$num_r-1);				
 
 
 
@@ -500,6 +515,7 @@ if ($table == 9){
 
 if ($table == 10){
 	
+
 	$cursor=$collection->find(['ID'=>$randrow]);
 	$options = array();
 	foreach($cursor as $document)
