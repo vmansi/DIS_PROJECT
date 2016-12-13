@@ -45,6 +45,10 @@ echo "<h1 class='style8' align=center>Welcome to Online Exam</h1>";
     <td height="58" valign="bottom"><img src="image/DEGREE.JPG" width="100" height="100" align="absmiddle"></td>
     <td valign="bottom"> <a href=showtest2.php?subid=2 class="style4"><h1>Result </a></td>
   </tr>
+  <tr>
+    <td height="58" valign="bottom"><img src="image/facts.jpg" width="100" height="100" align="absmiddle"></td>
+    <td valign="bottom"> <a href="facts.php" class="style4"><h1>Olympics Facts </a></td>
+  </tr>
 </table>';
    
 		exit;
@@ -63,7 +67,7 @@ echo "<h1 class='style8' align=center>Welcome to Online Exam</h1>";
   </tr>
   <tr>
     <td height="296" valign="top"><div align="center">
-        <h1 class="style8">Wel come to Online Quiz</h1>
+        <h1 class="style8">Welcome to Online Quiz</h1>
       <span class="style5"><img src="image/paathshala.png" width="239" height="150"><span class="style7"><img src="image/HLPBUTT2.JPG" width="100" height="100"><img src="image/BOOKPG.PNG" width="100" height="100"></span>        </span>
         <param name="movie" value="english theams two brothers.dat">
         <param name="quality" value="high">
@@ -72,7 +76,7 @@ echo "<h1 class='style8' align=center>Welcome to Online Exam</h1>";
         <param name="BGCOLOR" value="#FFFFFF">
 <p align="left" class="style5">&nbsp;</p>
       <blockquote>
-         <h2> <p align="left" class="style5"><span class="style7">WelCome to Online 
+         <h2> <p align="left" class="style5"><span class="style7">Welcome to Online 
             exam. This Site will provide the exam for various subject of interest. 
             You need to login for taking any online exam.</span></p>
       </h2></blockquote>

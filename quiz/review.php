@@ -78,7 +78,11 @@ if ($row[5]!=null){
 	echo "<tr><td><input type=submit name=submit value='Learn More...'></form>";
 }
 if ($row[10]!=null){
-	echo "<br><br>Note: $row[10]\n";
+	echo "<br><br><table border=1 align=center><tr class=style2><td> Did you know??";
+	echo "<tr class=style8> <td>$row[10]";
 }
 echo "</table></table>";
 ?>
+
+
+

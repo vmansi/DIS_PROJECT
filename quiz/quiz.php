@@ -69,7 +69,7 @@ if ($table == 2){ // Ques1
 }
 
 if ($table == 3){ // Ques2
-	$rs = mysql_query("select * from QUES2",$cn) or die(mysql_error());
+	$rs = mysql_query("select * from QUES2 ",$cn) or die(mysql_error());
 	$rs_opt = mysql_query("select distinct Fname Lname from QUES1",$cn) or die(mysql_error());
 	$num_r = mysql_num_rows($rs);
 	$num_r_opt = mysql_num_rows($rs_opt);
@@ -163,8 +163,11 @@ if(!isset($_SESSION[qn]))
 
 
 	
-if($submit=='Next Question' && isset($ans))
-{			
+if($submit=='Next Question')
+{	
+	if (!isset($ans)){
+		$ans = 5;
+	}		
 		$rs_new = mysql_query("select * from mst_question where que_id=$cnt-1",$cn) or die(mysql_error());
 		mysql_data_seek($rs_new,0);
 		$row = mysql_fetch_row($rs_new);
@@ -178,9 +181,11 @@ if($submit=='Next Question' && isset($ans))
 		$_SESSION[qn]=$_SESSION[qn]+1;
 		
 }
-else if($submit=='Get Result' && isset($ans))
+else if($submit=='Get Result')
 {
-				
+	if (!isset($ans)){
+		$ans = 5;
+	}			
 		$rs_new = mysql_query("select * from mst_question where que_id=$cnt-1",$cn) or die(mysql_error());
 		mysql_data_seek($rs_new,0);
 		$row = mysql_fetch_row($rs_new);
@@ -368,7 +373,7 @@ if ($table == 4){
 			$options[$i] = $w[0];
 		}			
 	} 	
-	$ques = "Which country won the maximum number of gold medals in ".$r[0]."?";
+	$ques = "Which country won the maximum number of medals in ".$r[0]."?";
 	$tags = $r[0];
 	mysql_query("insert into mst_question(que_id, test_id, que_desc, ans1,ans2,ans3,ans4,true_ans,url,notes,tags) values ($cnt, $tid,'$ques','$options[0]','$options[1]','$options[2]', '$options[3]',$true_ans_pos+1,null,null,'$tags')") or die(mysql_error());
 	$rs_new = mysql_query("select * from mst_question where que_id=$cnt",$cn) or die(mysql_error());
